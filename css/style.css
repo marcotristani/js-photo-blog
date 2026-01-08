@@ -9,6 +9,13 @@ header{
     background-image: url(/img/wall.png);
     height: 20vh;
     text-align: center;
+    line-height: 20vh;
+    
+}
+#title {
+    font-size: 12vh;
+    font-weight: bold;
+    vertical-align: middle;
 }
 main {
     background-image: url(/img/cork.png);
