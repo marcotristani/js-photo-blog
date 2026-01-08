@@ -10,6 +10,9 @@ header {
   height: 20vh;
   text-align: center;
   line-height: 20vh;
+  position: fixed;
+  z-index: 900;
+  width: 100vw;
 }
 header #title {
   font-size: 12vh;
@@ -17,7 +20,9 @@ header #title {
   vertical-align: middle;
 }
 main {
+  padding-top: 20vh;
   background-image: url(/img/cork.png);
+  min-height: 100vh;
   height: 100%;
 }
 #container {
@@ -54,16 +59,15 @@ main {
 /* RESPONSIVE */
 
 /*Tablet*/
-@media  screen and (max-width : 790px) {
-    .card {
-        flex-basis: calc((100% / 2) - (2rem / 2));
-    }
+@media screen and (max-width: 790px) {
+  .card {
+    flex-basis: calc((100% / 2) - (2rem / 2));
+  }
 }
 
 /*mobile*/
-@media  screen and (max-width : 507px) {
-    .card {
-        flex-basis: 100%;
-    }
+@media screen and (max-width: 507px) {
+  .card {
+    flex-basis: 100%;
+  }
 }
-
