@@ -3,37 +3,28 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 header {
   font-family: "Edu TAS Beginner", sans-serif;
   background-image: url(../img/wall.png);
-  /*con altezza adattata al vh*/
-  height: 20vh;
-  line-height: 20vh;
-  /* oppure con altezza fissa*/
-  /* height: 150px;
-  line-height: 150px; */
+  height: 150px;
+  line-height: 150px; 
   text-align: center;
   position: fixed;
   z-index: 900;
-  width: 100vw;
+  width: 100%;
 }
 header #title {
-  /*con altezza adattata al vh*/
-  font-size: 12vh;
-  /* oppure con altezza fissa*/
-  /* font-size: 120px; */
+  font-size: 8rem; 
   font-weight: bold;
   vertical-align: middle;
 }
 main {
-  padding-top: 20vh;
+  padding-top: 150px;
   background-image: url(../img/cork.png);
-  min-height: 100vh;
-  height: 100%;
 }
 #container {
-  padding: 30px 10vw;
+  width: 80%;
+  margin: 30px auto;
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
@@ -70,12 +61,32 @@ main {
   .card {
     flex-basis: calc((100% / 2) - (2rem / 2));
   }
+  header {
+    height: 120px;
+    line-height: 120px;
+  }
+  header #title {
+  font-size: 6rem;
+  } 
+  main {
+    padding-top: 120px ;
+  }
 }
 
 /*mobile*/
 @media screen and (max-width: 507px) {
   .card {
     flex-basis: 100%;
+  }
+    header {
+    height: 100px;
+    line-height: 100px;
+  }
+  header #title {
+  font-size: 4rem;
+  } 
+  main {
+    padding-top: 100px ;
   }
 }
 
@@ -85,7 +96,25 @@ main {
   header {
     display: none;
   }
+
   main {
-    padding: 0;
+    padding: 30px 0;
   }
 }
+
+
+/*altezza*/
+@media screen and (max-height: 500px) {
+    header {
+    height: 100px;
+    line-height: 100px;
+    position: static;
+  }
+  header #title {
+  font-size: 4rem;
+  } 
+  main {
+    padding: 30px 0;
+  }
+}
+
