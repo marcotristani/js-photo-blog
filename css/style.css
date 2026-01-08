@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    font-family: "Edu TAS Beginner", sans-serif;
+    background-image: url(/img/wall.png);
+    height: 20vh;
+    text-align: center;
+}
+main {
+    background-image: url(/img/cork.png);
+    height: 100vh;
+}
+#container {
+    padding: 10px 10%;
+}
+.card {
+    font-family: "Sometype Mono", monospace;
+}
