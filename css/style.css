@@ -7,15 +7,22 @@
 header {
   font-family: "Edu TAS Beginner", sans-serif;
   background-image: url(/img/wall.png);
+  /*con altezza adattata al vh*/
   height: 20vh;
-  text-align: center;
   line-height: 20vh;
+  /* oppure con altezza fissa*/
+  /* height: 150px;
+  line-height: 150px; */
+  text-align: center;
   position: fixed;
   z-index: 900;
   width: 100vw;
 }
 header #title {
+  /*con altezza adattata al vh*/
   font-size: 12vh;
+  /* oppure con altezza fissa*/
+  /* font-size: 120px; */
   font-weight: bold;
   vertical-align: middle;
 }
