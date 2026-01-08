@@ -1,46 +1,52 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-header{
-    font-family: "Edu TAS Beginner", sans-serif;
-    background-image: url(/img/wall.png);
-    height: 20vh;
-    text-align: center;
-    line-height: 20vh;
-    
+header {
+  font-family: "Edu TAS Beginner", sans-serif;
+  background-image: url(/img/wall.png);
+  height: 20vh;
+  text-align: center;
+  line-height: 20vh;
 }
 header #title {
-    font-size: 12vh;
-    font-weight: bold;
-    vertical-align: middle;
+  font-size: 12vh;
+  font-weight: bold;
+  vertical-align: middle;
 }
 main {
-    background-image: url(/img/cork.png);
-    height: 100%;
+  background-image: url(/img/cork.png);
+  height: 100%;
 }
 #container {
-    padding: 30px 10%;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
+  padding: 30px 10%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 .card {
-    font-family: "Sometype Mono", monospace;
-    background-color: white;
-    flex-basis: calc((100% / 3) - (2rem / 3)) ;
+  font-family: "Sometype Mono", monospace;
+  background-color: white;
+  flex-basis: calc((100% / 3) - (4rem / 3));
+  position: relative;
 }
 .card figure {
-    padding: 20px;
-    max-width: 600px;
-    max-height: 600px;
+  padding: 20px;
+  max-width: 600px;
+  max-height: 600px;
 }
 .card img {
-    max-width: 100%;
+  max-width: 100%;
 }
 
 .card figcaption {
-    padding: 0 20px 20px 20px;
+  padding: 0 20px 20px 20px;
+}
+.card #pin {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -10px;
 }
