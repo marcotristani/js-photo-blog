@@ -6,7 +6,7 @@
 
 header {
   font-family: "Edu TAS Beginner", sans-serif;
-  background-image: url(/img/wall.png);
+  background-image: url(../img/wall.png);
   /*con altezza adattata al vh*/
   height: 20vh;
   line-height: 20vh;
@@ -28,12 +28,12 @@ header #title {
 }
 main {
   padding-top: 20vh;
-  background-image: url(/img/cork.png);
+  background-image: url(../img/cork.png);
   min-height: 100vh;
   height: 100%;
 }
 #container {
-  padding: 30px 10%;
+  padding: 30px 10vw;
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
@@ -66,7 +66,7 @@ main {
 /* RESPONSIVE */
 
 /*Tablet*/
-@media screen and (max-width: 790px) {
+@media screen and (max-width: 820px) {
   .card {
     flex-basis: calc((100% / 2) - (2rem / 2));
   }
@@ -76,5 +76,16 @@ main {
 @media screen and (max-width: 507px) {
   .card {
     flex-basis: 100%;
+  }
+}
+
+/* mini-mobile*/
+
+@media screen and (max-width: 440px) {
+  header {
+    display: none;
+  }
+  main {
+    padding: 0;
   }
 }
