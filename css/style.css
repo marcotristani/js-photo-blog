@@ -50,3 +50,20 @@ main {
   transform: translateX(-50%);
   top: -10px;
 }
+
+/* RESPONSIVE */
+
+/*Tablet*/
+@media  screen and (max-width : 790px) {
+    .card {
+        flex-basis: calc((100% / 2) - (2rem / 2));
+    }
+}
+
+/*mobile*/
+@media  screen and (max-width : 507px) {
+    .card {
+        flex-basis: 100%;
+    }
+}
+
