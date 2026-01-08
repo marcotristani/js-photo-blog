@@ -12,18 +12,35 @@ header{
     line-height: 20vh;
     
 }
-#title {
+header #title {
     font-size: 12vh;
     font-weight: bold;
     vertical-align: middle;
 }
 main {
     background-image: url(/img/cork.png);
-    height: 100vh;
+    height: 100%;
 }
 #container {
-    padding: 10px 10%;
+    padding: 30px 10%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 .card {
     font-family: "Sometype Mono", monospace;
+    background-color: white;
+    flex-basis: calc((100% / 3) - (2rem / 3)) ;
+}
+.card figure {
+    padding: 20px;
+    max-width: 600px;
+    max-height: 600px;
+}
+.card img {
+    max-width: 100%;
+}
+
+.card figcaption {
+    padding: 0 20px 20px 20px;
 }
