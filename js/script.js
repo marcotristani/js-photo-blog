@@ -1,6 +1,8 @@
 // collegamento riferimento file html
 const outputCard = document.getElementById("container");
 const activateOverlay = document.getElementById("overlay");
+const stopBody = document.querySelector('body');
+const imageOverlay = document.getElementById('img-overlay');
 
 
 // definizione endpoint di riferimento all'url dell'API
@@ -30,9 +32,16 @@ axios
     console.log(allCard);
 
     //selezioniamo l'evento di click su una card
-    allCard[0].addEventListener("click", (event) => {
+    for (let index = 0; index < allCard.length; index++) {
+          allCard[index].addEventListener("click", (event) => {
       activateOverlay.classList.remove("disactive");
+      stopBody.classList.add('hidden');
+      const objectCard = posts.find(post => post.id === index + 1 );
+      imageOverlay.innerHTML = `<img src="${objectCard.url}" alt="" />`
     });
+      
+    }
+
   })
   .catch((error) => {
     // codice da eseguire in caso di errore(mando errore in pagina)

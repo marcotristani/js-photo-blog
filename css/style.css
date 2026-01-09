@@ -64,20 +64,25 @@ main {
   position: absolute;
   z-index: 900;
   text-align: center;
-  padding: 50px;
+  padding: 30px;
 }
 
 #overlay button{
 font-size:xx-large;
-margin-bottom: 30px;
+margin-bottom: 20px;
 padding: 10px;
 border-radius: 10px;
+}
+#overlay img {
+  max-width: 600px;
 }
 
 .disactive {
   display: none;
 }
-
+.hidden {
+  overflow: hidden;
+}
 /* RESPONSIVE */
 
 /*Tablet*/
