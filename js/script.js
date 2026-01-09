@@ -1,5 +1,7 @@
 // collegamento riferimento file html
 const outputCard = document.getElementById("container");
+const activateOverlay = document.getElementById("overlay");
+
 
 // definizione endpoint di riferimento all'url dell'API
 const endpoint = "https://lanciweb.github.io/demo/api/pictures/";
@@ -14,22 +16,31 @@ axios
     //Creo una stringa vuota dove andare ad incrementare il testo html ogni volta che prendo i dati che mi servono dall'oggetto dell'array
     let innerCard = "";
     //Faccio un ciclo per attraversare tutti gli oggetti dell'array
-    posts.forEach(post => {
+    posts.forEach((post) => {
       //destrutturo l'array
       const { title, date, url } = post;
       //faccio chiamata alla funzione per avere il testo da inserire nell'html
-      innerCard += cardGenerator ( title, date, url);
+      innerCard += cardGenerator(title, date, url);
     });
     outputCard.innerHTML = innerCard;
+    console.log(posts);
+
+    //Prendiamo riferimenti card della pagina(creando un array con tutti i riferimenti ad ogni singola card)
+    const allCard = document.querySelectorAll(".card");
+    console.log(allCard);
+
+    //selezioniamo l'evento di click su una card
+    allCard[0].addEventListener("click", (event) => {
+      activateOverlay.classList.remove("disactive");
+    });
   })
   .catch((error) => {
     // codice da eseguire in caso di errore(mando errore in pagina)
-    document.querySelector('body').innerHTML = error.message;
+    document.querySelector("body").innerHTML = error.message;
   });
 
-
-  function cardGenerator (description, date, urlImage) {
-        output =`       
+function cardGenerator(description, date, urlImage) {
+  output = `       
         <div class="card">
           <img src="./img/pin.svg" alt="" id="pin" />
           <figure>
@@ -40,5 +51,5 @@ axios
             <div>${date}</div>
           </figcaption>
         </div>`;
-        return output;
-    };
+  return output;
+}
