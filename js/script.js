@@ -2,8 +2,6 @@
 const outputCard = document.getElementById("container");
 const activateOverlay = document.getElementById("overlay");
 const stopBody = document.querySelector("body");
-const imageOverlay = document.getElementById("img-overlay");
-const closeButton = document.querySelector("button");
 
 // definizione endpoint di riferimento all'url dell'API
 const endpoint = "https://lanciweb.github.io/demo/api/pictures/";
@@ -36,14 +34,14 @@ axios
       allCard[index].addEventListener("click", (event) => {
         activateOverlay.classList.remove("disactive");
         stopBody.classList.add("hidden");
-        const objectCard = posts.find((post) => post.id === index + 1);
-        imageOverlay.innerHTML = `<img src="${objectCard.url}" alt="" />`;
-      });
-
-      closeButton.addEventListener("click", (event) => {
-        event.preventDefault();
-        activateOverlay.classList.add("disactive");
-        stopBody.classList.remove("hidden");
+        const selectedCard = posts.find(post => post.id === index + 1);
+        activateOverlay.innerHTML = overlayGenerator(selectedCard.url);
+        const closeButton = document.querySelector("button");
+        closeButton.addEventListener("click", (event) => {
+          event.preventDefault();
+          activateOverlay.classList.add("disactive");
+          stopBody.classList.remove("hidden");
+        });
       });
     }
   })
@@ -60,9 +58,15 @@ function cardGenerator(description, date, urlImage) {
             <img src="${urlImage}" alt="" />
           </figure>
           <figcaption>
-            <div>${description}</div>
-            <div>${date}</div>
+            <h2>${description}</h2>
+            <p>${date}</p>
           </figcaption>
         </div>`;
+  return output;
+}
+
+function overlayGenerator(urlImage) {
+  output = `<button>Chiudi</button>
+      </div><img src="${urlImage}" alt="" />`;
   return output;
 }
