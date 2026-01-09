@@ -3,7 +3,7 @@ const outputCard = document.getElementById("container");
 const activateOverlay = document.getElementById("overlay");
 const stopBody = document.querySelector('body');
 const imageOverlay = document.getElementById('img-overlay');
-
+const closeButton = document.querySelector('button');
 
 // definizione endpoint di riferimento all'url dell'API
 const endpoint = "https://lanciweb.github.io/demo/api/pictures/";
@@ -33,12 +33,20 @@ axios
 
     //selezioniamo l'evento di click su una card
     for (let index = 0; index < allCard.length; index++) {
-          allCard[index].addEventListener("click", (event) => {
+      allCard[index].addEventListener("click", (event) => {
       activateOverlay.classList.remove("disactive");
       stopBody.classList.add('hidden');
       const objectCard = posts.find(post => post.id === index + 1 );
       imageOverlay.innerHTML = `<img src="${objectCard.url}" alt="" />`
     });
+
+    closeButton.addEventListener('click', (event) => {
+      event.preventDefault();
+      activateOverlay.classList.add("disactive");
+      stopBody.classList.remove('hidden');
+    })
+    
+
       
     }
 
