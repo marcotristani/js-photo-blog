@@ -36,6 +36,16 @@ main {
   position: relative;
   cursor: pointer;
 }
+.card:hover {
+  transform: scale(1.2); 
+  rotate: 25deg;
+  transition: 1s;
+  z-index: 850;
+  position: static;
+}
+.card:hover #pin{
+  display: none;
+}
 .card figure {
   padding: 20px;
   max-width: 600px;
