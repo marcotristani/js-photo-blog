@@ -33,7 +33,7 @@ axios
         activateOverlay.classList.remove("disactive");                      //appare overlay con immagine della card grande
         stopBody.classList.add("hidden");                                   //viene bloccato lo scroll e i vari comportamenti del body
         const selectedCard = posts.find(post => post.id === index + 1);     //recupero l'oggetto corrispondente alla card selezionata
-        activateOverlay.innerHTML = overlayGenerator(selectedCard.url);    //faccio creare l'overlay con l'url dell'immagine di questa card da inssrire nell'html
+        activateOverlay.innerHTML = overlayGenerator(selectedCard.url, selectedCard.title);    //faccio creare l'overlay con l'url dell'immagine di questa card da inssrire nell'html
         const closeButton = document.querySelector("button");              //seleziono il bottone appena creato
         closeButton.addEventListener("click", (event) => {                 //quando clicco il bottone:
           event.preventDefault();
@@ -52,9 +52,9 @@ axios
 function cardGenerator(description, date, urlImage) {
   output = `       
         <div class="card">
-          <img src="./img/pin.svg" alt="" class="pin" />
+          <img src="./img/pin.svg" alt="pin rosso che blocca la foto sulla bacheca" class="pin" />
           <figure>
-            <img src="${urlImage}" alt="" />
+            <img src="${urlImage}" alt="${description}" />
           </figure>
           <figcaption>
             <h2>${description.toUpperCase()}</h2>
@@ -64,8 +64,8 @@ function cardGenerator(description, date, urlImage) {
   return output;
 }
 
-function overlayGenerator(urlImage) {
+function overlayGenerator(urlImage, description) {
   output = `<button>Chiudi</button>
-      </div><img src="${urlImage}" alt="" />`;
+      </div><img src="${urlImage}" alt="${description}" />`;
   return output;
 }
